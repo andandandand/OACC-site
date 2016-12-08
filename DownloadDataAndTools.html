@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="format-detection" content="telephone=no">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+  <meta content="telephone=no" name="format-detection" /><script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+  });
+  </script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.1-latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+<title>OACC - Online Algorithmic Complexity Calculator</title>
+<style type="text/css">
+.default {
+	font-family: Verdana, Geneva, sans-serif;
+}
+.default {
+	font-family: "Courier New", Courier, monospace;
+}
+.default {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+a:link {
+	color: #F60;
+	text-decoration: none;
+}
+a:visited {
+	color: #F60;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: none;
+}
+.center-justified {
+  text-align: justify;
+  margin: 0 auto;
+  width: 40em;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+  <body background="./images/TuringField.png" class="default">
+<center>
+   <a href="index.html">Main Page</a> | <a href="HowItWorks.html">How It Works</a> | <a href="HowToCite.html">How To Cite</a> | <a href="team.html">Team</a> | <a href="https://github.com/andandandand/OACC">GitHub Repo</a> | <a href="DownloadDataAndTools.html">Download Data and Tools</a> | <a href="http://algorithmicnature.wordpress.com/publications/">Publications</a> 
+  <h1><a href="index.html">The Online Algorithmic Complexity Calculator</a></h1>
+      
+  <p>&nbsp;</p>
+ 
+        <h2 align ="center">Full Code for the Online Algorithmic Complexity Calculator</h2>
+        <div class="center-justified">
+        
+                <p>Source files for the <a href="https://shiny.rstudio.com/">R Shiny</a> web server are <a href="https://github.com/andandandand/OACC">available at Github.</a>
+        <p >
+        
+        After installing <a href="https://git-scm.com/">Git</a>, all files can be downloaded from a terminal calling:   
+         <p align="center"><strong>git clone https://github.com/andandandand/OACC.git</strong></p>
+
+         <p>With <a href="https://www.rstudio.com/">RStudio</a> and Shiny installed, the OACC can be run locally by calling <a href="https://shiny.rstudio.com/reference/shiny/latest/runApp.html">runApp()</a> on the <strong>server.r</strong> or <strong>ui.r</strong> source files.</p>
+        </div>
+ <br>
+ <div class="center-justified">
+        <h2 align="center">Algorithmic Complexity
+          for Short Strings (ACSS)</br> R Package </h2>
+        <p>The <strong>acss</strong> package can be installed from the <a href="https://cran.r-project.org/web/packages/acss/index.html">Comprehensive R Archive Network (CRAN) </a> via:   
+          <p align="center"><strong>install.packages("acss")</strong></p>
+
+          <p>and loaded with:</p>  
+
+          <p align="center"><strong>require(acss)</strong></p>
+          <div class="center-justified"><p>
+            It will work right out of the box, without any software other than <a href="https://www.r-project.org/">R</a>.
+          </p></div>
+        <h2 align="center"><strong>Usage</strong></h2>
+        <div class="center-justified">
+          <p><strong>acss_data</strong> is a data frame with 4590267 values for the following 5 columns:
+        </p></div>
+        <p align = "center">K.2 acss with 2 symbols<br>
+            K.4 acss with 4 symbols<br>
+            K.5 acss with 5 symbols<br>
+            K.6 acss with 6 symbols<br>
+            K.9 acss with 9 symbols
+          </p>
+            <div class="center-justified"><p>Each representing a set of strings with CTM values <strong>K.x</strong> estimated by algorithmic probability <strong>D.x.</strong> in the alphabet of size <strong>x</strong>.</p>
+            <p>Calling </p>
+            <p align = "center"><strong>acss(string = "ATATATATATAT", alphabet = 2)</strong></p> 
+            <div class="center-justified"><p>will output the CTM value (<strong>K</strong>) and the algorithmic probability (<strong>D</strong>) for the string considering only 2 possible symbols in the algorithmic probability distribution. </p></div>
+            <table align="center">
+             <tr> <td>&nbsp;</td>   <td><strong>K.2</strong></td>  <td><strong>D.2</strong></td> </tr> 
+             <tr><td><strong>ATATATATATAT</strong></td> <td><strong>26.99073</strong></td> <td><strong>7.498626e-09</strong></td></tr>
+            </table>
+            <div class="center-justified"><p>While calling </p>
+            <p align = "center"><strong>acss(string = "ATATATATATAT", alphabet = 4)</strong></p> 
+            <div class="center-justified"><p>will output the CTM value (<strong>K</strong>) and the algorithmic probability (<strong>D</strong>) for the string </br>considering 4 possible symbols in the algorithmic probability distribution.</p></div>
+            <table align="center">
+             <tr> <td>&nbsp;</td>   <td><strong>K.4</strong></td>  <td><strong>D.4</strong></td> </tr> 
+             <tr><td><strong>ATATATATATAT</strong></td> <td><strong>27.81547</strong></td> <td><strong>4.233589e-09</strong></td></tr>
+            </table>
+            <p align="center">$K.x$ is always equal to $-\log_{2}(D.x)$</p>
+       
+        <div class="center-justified"><p>Running <strong>example(acss)</strong> will give plenty of usage examples.</p>
+          <p>
+            <a href="https://cran.r-project.org/web/packages/acss/acss.pdf">Full documentation</a> is available at the Comprehensive R Archive Network (CRAN).</p> 
+          <p>
+            For technical details on the Coding Theorem Method, please visit <a href="HowItWorks.html">How It Works</a>.
+          </p>
+        </div>
+         <br>
+        <h2 align="center">Universal Distribution Approximations<br>
+        </h2>
+        <div class="justified-center">
+        <p>You can download the known algorithmic probability datasets from the<a href="http://dvn.iq.harvard.edu/dvn/dv/algorithmicnature">
+          Algorithmic Nature Dataverse Repository</a> or you can click on the Download icon below directly.</p>
+        
+        <blockquote>
+          <blockquote>
+            <table width="405" border="1" align="center">
+              <tr>
+                <td width="254"><p>$D(4,2)$ dataset in CSV format</p></td>
+                <td width="135"><div align="center">
+                  <div align="center"><a href="D4.csv"><img src="./images/download-icon.jpeg" alt="" width="29" height="30" border="0"></a></div>
+                </div></td>
+              </tr>
+              <tr>
+                <td>$D(5,2)$ dataset in CSV format</td>
+                <td><div align="center"><a href="D5.csv"><img src="./images/download-icon.jpeg" alt="" width="29" height="30" border="0"></a></div></td>
+              </tr>
+              <tr>
+                <td height="71">$D(4,2)_{2D}$ dataset in CSV format</td>
+                <td><div align="center"><a href="https://cran.r-project.org/web/packages/acss/index.html">see R package</a></div></td>
+              </tr>
+              <tr>
+                <td height="71">$D(5,2)_{2D}$ dataset in CSV format</td>
+                <td><div align="center"><a href="https://cran.r-project.org/web/packages/acss/index.html">see R package</a></div></td>
+              </tr>
+              <tr>
+                <td height="71">$D(4,4)$ dataset in CSV format</td>
+                <td><div align="center"><a href="https://cran.r-project.org/web/packages/acss/index.html">see R package</a></div></td>
+              </tr>
+              <tr>
+                <td height="71">$D(4,6)$ dataset in CSV format</td>
+                <td><div align="center"><a href="https://cran.r-project.org/web/packages/acss/index.html">see R package</a></div></td>
+              </tr>
+              <tr>
+                <td height="71">$D(4,9)$ dataset in CSV format</td>
+                <td><div align="center"><a href="https://cran.r-project.org/web/packages/acss/index.html">see R package</a></div></td>
+              </tr>
+              <tr>
+                <td height="71">$D(4,10)$ dataset in CSV format</td>
+                <td><div align="center"><a href="https://cran.r-project.org/web/packages/acss/index.html">see R package</a></div></td>
+              </tr>
+            </table>
+            <p>&nbsp;</p>
+            <h3 align="center">Mining and Exploitation Tools<br>
+              </h3>
+            <table width="412" border="1" align="center">
+              <tr>
+                <td height="71"><div align="center">Mathematica <br>
+                  API notebook</div></td>
+                <td><div align="center"><a href="KolmoAPI.nb"><img src="./images/download-icon.jpeg" alt="" width="29" height="30" border="0"></a></div></td>
+              </tr>
+          </table>
+            <div align="right"></div>
+            <h5 align="right"><br>
+            </h5>
+          </blockquote>
+          </blockquote>
+</div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</center>
+<table width="797" border="0" align="center">
+  <tr>
+    <td width="302"><h6>Content on<span href="http://creativecommons.org" property="cc:attributionName" rel="cc:attributionURL"> this site</span> is licensed under a<br />
+      <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a><br />
+      <br />
+      <a href="http://creativecommons.org/licenses/by/3.0"><img src="./images/CC.png" alt="Creative Commons Licence Attribution 3.0 Unported (CC BY 3.0)" width="88" height="31" border="0" longdesc="http://creativecommons.org/licenses/by/3.0/" /><br />
+      </a><a href="http://creativecommons.org/licenses/by/3.0">View License Deed</a> | <a href="http://creativecommons.org/licenses/by/3.0/legalcode">View Legal Code</a></h6></td>
+    <td width="485"><h6>Contact info: hector.zenil at algorithmicnaturelab dot org </h6>
+      <h6>If you use results from the OACC in a publication, please visit <a href="HowToCite.html">How to Cite.</a><br /></br>
+       <a href="http://www.algorithmicnature.net">Algorithmic Nature Group</a> - <a href="http://www.labores.eu">LABORES for the Natural and Digital Sciences</a></h6></td>
+  </tr>
+</table>
+</body>
+</html>

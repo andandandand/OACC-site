@@ -1,0 +1,6 @@
+@article{zenil2016decomposition,
+  title={A Decomposition Method for Global Evaluation of {S}hannon Entropy and Local Estimations of Algorithmic Complexity},
+  author={Zenil, Hector and Soler-Toscano, Fernando and Kiani, Narsis A and Hern{\'a}ndez-Orozco, Santiago and Rueda-Toicen, Antonio},
+  journal={arXiv preprint arXiv:1609.00110},
+  year={2016}
+}

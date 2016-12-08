@@ -1,0 +1,9 @@
+@article{zenil2014correlation,
+  title={Correlation of automorphism group size and topological properties with program-size complexity evaluations of graphs and complex networks},
+  author={Zenil, Hector and Soler-Toscano, Fernando and Dingle, Kamaludin and Louis, Ard A},
+  journal={Physica A: Statistical Mechanics and its Applications},
+  volume={404},
+  pages={341--358},
+  year={2014},
+  publisher={Elsevier}
+}

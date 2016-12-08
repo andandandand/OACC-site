@@ -1,0 +1,50 @@
+
+.default {
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+.default {
+	font-family: "Courier New", Courier, monospace;
+}
+
+.default {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+body {
+	background-image: url(./images/TuringField.png);
+}
+
+a:link {
+	color: #F60;
+	text-decoration: none;
+}
+
+.click-here{
+	color: #8B0000;
+}
+
+a:visited {
+	color: #F63;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:active {
+	text-decoration: none;
+}
+
+.center-justified {
+  text-align: justify;
+  margin: 0 auto;
+  width: 50em;
+}
+
+.holds-the-iframe {
+  background:url(./images/loader.gif) center top no-repeat;
+ }
+
+}

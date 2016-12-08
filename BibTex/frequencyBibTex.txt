@@ -1,0 +1,10 @@
+@article{soler2014calculating,
+  title={Calculating {K}olmogorov complexity from the output frequency distributions of small {T}uring machines},
+  author={Soler-Toscano, Fernando and Zenil, Hector and Delahaye, Jean-Paul and Gauvrit, Nicolas},
+  journal={PloS one},
+  volume={9},
+  number={5},
+  pages={e96223},
+  year={2014},
+  publisher={Public Library of Science}
+}

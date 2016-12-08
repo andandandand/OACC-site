@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      tex2jax: {
+      inlineMath: [["$","$"],["\\(","\\)"]]
+      }
+      });
+    </script>
+    <script type="text/javascript"
+	    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full">
+    </script>
+<meta name="format-detection" content="telephone=no">
+
+
+<title>OACC - Online Algorithmic Complexity Calculator</title>
+<style type="text/css">
+.default {
+	font-family: Verdana, Geneva, sans-serif;
+}
+.default {
+	font-family: "Courier New", Courier, monospace;
+}
+.default {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+a:link {
+	color: #F60;
+	text-decoration: none;
+}
+a:visited {
+	color: #F60;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: none;
+}
+
+.center-justified {
+  text-align: justify;
+  margin: 0 auto;
+  width: 55em;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+  <body background="./images/TuringField.png" class="default">
+  <center>
+   <a href="index.html">Main Page</a> | <a href="HowItWorks.html">How It Works</a> | <a href="HowToCite.html">How To Cite</a> | <a href="team.html">Team</a> | <a href="https://github.com/andandandand/OACC">GitHub Repo</a> | <a href="DownloadDataAndTools.html">Download Data and Tools</a> | <a href="http://algorithmicnature.wordpress.com/publications/">Publications</a> 
+  <h1><a href="index.html">The Online Algorithmic Complexity Calculator</a></h1>
+  </center>
+   
+<center>
+  
+  <div class="center-justified">  
+  <h2>Overview</h2>
+  <p>This introductory video provides a brief overview of how both the Block Decomposition Method and the Coding Theorem Method work as universal measures of complexity.</p>
+
+<center>
+  <iframe seamless src="https://www.youtube.com/embed/BEaXyDS_1Cw" style="border: none; width: 50vw; height: 30vw" allowfullscreen></iframe>
+
+  <div class="center-justified">
+      <p align="justify">The&nbsp;<strong>Online Algorithmic Complexity Calculator (OACC)</strong>&nbsp;is an online&nbsp;tool developed&nbsp;by the&nbsp;<a href="http://algorithmicnature.org/" target="_blank">Algorithmic Nature Group</a>&nbsp;to provide reliable estimations&nbsp;to functions of complexity that are ultimately semi-computable, but represent true and universal measures of randomness (unlike statistical or entropic measurement approaches). This is done&nbsp;through various numerical methods based upon the mathematical theory of&nbsp;algorithmic probability and&nbsp;algorithmic randomness. The estimations have a wide range of applications&nbsp;in a very wide range of disciplines&nbsp;and&nbsp;they have been used in molecular biology, bioinformatics, psychometrics,&nbsp;economics, and graph theory (for a list of examples, see <a href="http://algorithmicnature.wordpress.com/publications/">Publications</a>).</p>
+</div>
+
+<div class="center-justified">
+<p>The <strong>OACC</strong> retrieves numerical approximations (upper bounds) of <a href="http://www.scholarpedia.org/article/Algorithmic_complexity">Algorithmic (Kolmogorov-Chaitin) Complexity</a> (AC) for short strings ($\textit{CTM}$), any length ($\textit{BDM}_{1D}$), and binary matrices ($\textit{BDM}_{2D}$), which can represent the adjacency matrices of unweighted graphs. These techniques are not only an alternative to the widespread use of lossless compression algorithms to approximate AC, but true approaches to AC. Lossless compression algorithms (e.g. BZIP2, GZIP, LZ) that are based upon entropy rate are not more related to AC than Shannon Entropy itself, which is unable to compress anything but statistical regularities.</p>
+</div>
+</center>
+  <h2>Choosing evaluation parameters for the Block Decomposition Method</h2>
+  
+    <p>If the string that you want to evaluate has length shorter than $13$, you should use the Coding Theorem Method ($\textit{CTM}$) to estimate its algorithmic complexity. If the string is longer than $12$, then its algorithmic complexity can be numerically estimated with the Block Decomposition Method ($\textit{BDM}$), which requires specifying block size and block overlap values.</p>
+
+<p>The following is a $BDM$ partitioning example for block size $= 6$ and block overlap $= 1$ : </p>
+
+<p align="center"><img src="examplediagram.png" width="432" height="139" alt=""/></p>
+
+
+<p>
+In the formula $$\textit{BDM} = \sum_{i}^{n} \textit{CTM}(\textit{block}_i) + \log_{2}(|\textit{block}_i|),$$ $\textit{CTM}(\textit{block}_i)$ denotes the approximated algorithmic complexity of the pattern in the block of symbols, and $|\textit{block}_i|$ denotes the number of occurrences (multiplicity) of the block.
+</p>
+
+    <p>For $\textit{BDM}$, optimal parameters are usually the largest possible block size ($= 12$) with no overlaping ($= 0$). You should always pick the largest available block size, as it provides better approximations to algorithmic complexity. In contrast, the smallest block size ($=1$) approximates Shannon Entropy. You can pick any overlapping value that is shorter than your block size. For example, say your string is $111001010111$ and you use block size $=6$. If the overlapping is $0$, then $\textit{BDM}$ will look up the known $\textit{CTM}$ values of $111001$ and $010111$ and add them up, outputting $29.9515$ bits. Alternatively, you can choose block overlap $=1$, for which the strings whose $\textit{CTM}$ values are added are $111001$, $101011$, and $010111$. This second evaluation will output $32.9672$ bits.</p>
+  </div>
+  <div class="center-justified">
+    <p>Overlapping helps to deal with leftovers of the block partitioning if the string length is not a multiple of the block size, otherwise, leftovers with length less than the block size will be discarded and won't be considered in the complexity estimation. <a href="https://arxiv.org/abs/1609.00110">This paper</a> shows different schemes to deal with boundary conditions. The online calculator only deals with the most 'basic' of these schemes, but we have proven that the error is bounded, and thus the output values are reliable for most comparative purposes. In general, overlapping blocks produce overestimations of complexity, and non-overlapping blocks lead to an underestimation only for objects with dimensions that are not a multiple of the block size. </p>
+    <p> You should always compare results with the same chosen parameters, never otherwise (unless you estimate the error as we did in the paper and then make corrections or take the deviations into consideration).</p>
+  </div>
+  <div class="center-justified"><p>As for matrices, the same rule holds. Current support for strings is binary and non-binary, but for arrays it's currently only binary. With some loss of precision, one can always translate any alphabet into binary with some loss of information due to the extra granularity introduced in the translation.<br></p></div> 
+  
+<div class="center-justified">
+  <h2>Calculating the algorithmic probability</h2>
+
+<p>For more technical details you should read the Bibliography section below. But in a nutshell, we calculate a function $D(n,m)(s)$, which gives the <strong><em>algorithmic probability</em></strong> that halting machines in the set of all Turing machines with $n$ states and $m$ symbols denoted by $(n,m)$, produce a string $s$. We use the standard model of Turing machine that was used by Tibor Rado to define the <a href="https://youtu.be/CE8UhcyJS0I">Busy Beaver problem</a>, but we have also proven that radical changes to the model produce similar estimations.</p>
+<p>Formally,
+  $$D(n, m)(s)=\frac{|\{T\in(n, m) : T(p) = s,\ b\in\{0,1,\cdots,m-1\}\}|}{|\{(T,b)\in(n, m)\times \{0,1,\cdots,m-1\} : T(b) \textit{ halts }\}|},$$
+  where $T(b)$ represents the output of Turing machine $T$ when running on a blank tape filled with symbol $b$ that produces $s$ upon halting, and $|A|$ represents the cardinality of the set $A$. </p>
+
+<p>For $(n,2)$ with $ n < 5 $, the known Busy Beaver values give the maximum number of steps that a machine can run upon halting. But for $n \geq 5$ or for $(n,m)$ with $m > 2$, no Busy Beaver values are known, and the size of the machine spaces make impossible a complete exploration to calculate $D(n,m)$ for arbitrary $n$ and $m$, but an educated choice of timeouts can be made and samples produced (see the Bibliography section below).</div><p>
+
+<div class="center-justified">
+<h2>Approximating algorithmic complexity</h2>
+
+<p>The function $D(n,m)$ is an approximation to Levin's Universal Distribution $\mathfrak{m}(s)$, and it can be used to approximate $K(s)$, the algorithmic complexity of string $s$ by using the Coding Theorem,
+  $$K(s) \simeq -\log_2 \mathfrak{m}(s)$$</p>
+<p>
+The greater value of $n$ we use to calculate $D(n,m)$, the better approximations we make to $K(s)$ for $s$ a string of an alphabet of $m$ symbols. Due to the uncomputability of $D(n,m)$ we work with samples and runtime cutoffs. For the simulation of Turing machines we use a C++ simulator running on a supercomputer of medium size.</div></p>
+
+<div class="center-justified">
+<h2><strong>Bibliography</strong></h2>
+
+<p> Delahaye J.-P. and Zenil, H. (2012) Numerical Evaluation of the Complexity of Short Strings: A Glance Into the Innermost Structure of Algorithmic Randomness. 
+  <a href="http://www.sciencedirect.com/science/article/pii/S0096300311012367">Applied Mathematics and Computation</a> 219, pp. 63-77. </br> 
+  <a href="BibTex/numericalBibTex.txt" target="_blank">BibTex entry</a></p>
+
+<p>Soler-Toscano F., Zenil H., Delahaye J.-P. and Gauvrit N. (2014) Calculating Kolmogorov Complexity from the Output Frequency Distributions of Small Turing Machines. <a href="http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0096223">PLoS ONE 9(5): e96223.</a></br> 
+        <a href="BibTex/frequencyBibTex.txt" target="_blank">BibTex entry</a>
+
+<p>Zenil H., Soler-Toscano F., Dingle K. and Louis A. (2014) Correlation of Automorphism Group Size and Topological Properties with Program-size Complexity Evaluations of Graphs and Complex Networks, <a href="http://www.sciencedirect.com/science/article/pii/S0378437114001691">Physica A: Statistical Mechanics and its Applications</a>, vol. 404, pp. 341–358, 2014.</br> 
+<a href="BibTex/graphBibTex.txt" target="_blank">BibTex entry</a></p>
+<p>Zenil H., Soler-Toscano F., Kiani N.A.,  Hernández-Orozco S.,  Rueda-Toicen A. (2016) A Decomposition Method for Global Evaluation of Shannon Entropy and Local Estimations of Algorithmic Complexity, <a href="https://arxiv.org/abs/1609.00110">arXiv:1609.00110</a></a></br> 
+        <a href="BibTex/bdmBibTex.txt" target="_blank">BibTex entry</a></p>
+<p>See the <a href="http://algorithmicnature.wordpress.com/publications/">Publications</a> section for even more details and  applications  to other areas and connections to other measures.</p><p>&nbsp;</p></div>
+<table width="797" border="0" align="center">
+  <tr>
+    <td width="302"><h6>Content on<span href="http://creativecommons.org" property="cc:attributionName" rel="cc:attributionURL"> this site</span> is licensed under a<br />
+      <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a><br />
+      <br />
+      <a href="http://creativecommons.org/licenses/by/3.0"><img src="./images/CC.png" alt="Creative Commons Licence Attribution 3.0 Unported (CC BY 3.0)" width="88" height="31" border="0" longdesc="http://creativecommons.org/licenses/by/3.0/" /><br />
+      </a><a href="http://creativecommons.org/licenses/by/3.0">View License Deed</a> | <a href="http://creativecommons.org/licenses/by/3.0/legalcode">View Legal Code</a></h6></td>
+    <td width="485"><h6>Contact info: hector.zenil at algorithmicnaturelag dot org</h6>
+      <h6>If you use results from the OACC in a publication, please visit <a href="HowToCite.html">How to Cite.</a><br />
+         <br>
+      <a href="http://www.algorithmicnature.net">Algorithmic Nature Group</a> - <a href="http://www.labores.eu">LABORES</a></h6></td>
+  </tr>
+</table>
+<br>
+</center>
+
+</body>
+</html>
