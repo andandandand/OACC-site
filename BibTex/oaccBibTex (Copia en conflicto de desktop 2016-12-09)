@@ -1,9 +1,0 @@
-%% remember to include a package that allows the use of \url
-%% \usepackage{hyperref} or \usepackage{url} will do   
-
-@misc{OACC,
-  title = {The Online Algorithmic Complexity Calculator, v1.0.1},
-  author = {Algorithmic Nature Lab},
-  howpublished = {\url{http://www.complexitycalculator.com}},
-  year = {2016}
-}
