@@ -1,0 +1,10 @@
+%% remember to include a package that allows the use of \url
+%% \usepackage{url} or \usepackage{hyperref} will do   
+
+@misc{oacc,
+  title = {The Online Algorithmic Complexity Calculator, v1.0.1},
+  author = {Algorithmic Nature Lab},
+  howpublished = {\url{http://www.complexitycalculator.com}},
+  year = {2016}
+  note = {[Online; accessed DAY-MONTH-2016]}
+}

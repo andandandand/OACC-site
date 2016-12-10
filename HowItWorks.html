@@ -51,13 +51,13 @@ a:active {
 
   <body background="./images/TuringField.png" class="default">
   <center>
-   <a href="index.html">Main Page</a> | <a href="HowItWorks.html">How It Works</a> | <a href="HowToCite.html">How To Cite</a> | <a href="team.html">Team</a> | <a href="https://github.com/andandandand/OACC">GitHub Repo</a> | <a href="DownloadDataAndTools.html">Download Data and Tools</a> | <a href="http://algorithmicnature.wordpress.com/publications/">Publications</a> 
+   <a href="index.html">Main Page</a> | <a href="HowItWorks.html">How It Works</a> | <a href="HowToCite.html">How To Cite</a> | <a href="team.html">Team</a> | <a href="https://github.com/andandandand/OACC">GitHub Repo</a> | <a href="DownloadDataAndTools.html">Download Data and Tools</a> | <a href="http://algorithmicnature.wordpress.com/publications/">Publications</a>
   <h1><a href="index.html">The Online Algorithmic Complexity Calculator</a></h1>
   </center>
-   
+
 <center>
-  
-  <div class="center-justified">  
+
+  <div class="center-justified">
   <h2>Overview</h2>
   <p>This introductory video provides a brief overview of how both the Block Decomposition Method and the Coding Theorem Method work as universal measures of complexity.</p>
 
@@ -73,12 +73,12 @@ a:active {
 </div>
 </center>
   <h2>Choosing evaluation parameters for the Block Decomposition Method</h2>
-  
+
     <p>If the string that you want to evaluate has length shorter than $13$, you should use the Coding Theorem Method ($\textit{CTM}$) to estimate its algorithmic complexity. If the string is longer than $12$, then its algorithmic complexity can be numerically estimated with the Block Decomposition Method ($\textit{BDM}$), which requires specifying block size and block overlap values.</p>
 
 <p>The following is a $BDM$ partitioning example for block size $= 6$ and block overlap $= 1$ : </p>
 
-<p align="center"><img src="examplediagram.png" width="432" height="139" alt=""/></p>
+<p align="center"><img src="./images/examplediagram.png" width="432" height="139" alt=""/></p>
 
 
 <p>
@@ -91,8 +91,8 @@ In the formula $$\textit{BDM} = \sum_{i}^{n} \textit{CTM}(\textit{block}_i) + \l
     <p>Overlapping helps to deal with leftovers of the block partitioning if the string length is not a multiple of the block size, otherwise, leftovers with length less than the block size will be discarded and won't be considered in the complexity estimation. <a href="https://arxiv.org/abs/1609.00110">This paper</a> shows different schemes to deal with boundary conditions. The online calculator only deals with the most 'basic' of these schemes, but we have proven that the error is bounded, and thus the output values are reliable for most comparative purposes. In general, overlapping blocks produce overestimations of complexity, and non-overlapping blocks lead to an underestimation only for objects with dimensions that are not a multiple of the block size. </p>
     <p> You should always compare results with the same chosen parameters, never otherwise (unless you estimate the error as we did in the paper and then make corrections or take the deviations into consideration).</p>
   </div>
-  <div class="center-justified"><p>As for matrices, the same rule holds. Current support for strings is binary and non-binary, but for arrays it's currently only binary. With some loss of precision, one can always translate any alphabet into binary with some loss of information due to the extra granularity introduced in the translation.<br></p></div> 
-  
+  <div class="center-justified"><p>As for matrices, the same rule holds. Current support for strings is binary and non-binary, but for arrays it's currently only binary. With some loss of precision, one can always translate any alphabet into binary with some loss of information due to the extra granularity introduced in the translation.<br></p></div>
+
 <div class="center-justified">
   <h2>Calculating the algorithmic probability</h2>
 
@@ -114,16 +114,16 @@ The greater value of $n$ we use to calculate $D(n,m)$, the better approximations
 <div class="center-justified">
 <h2><strong>Bibliography</strong></h2>
 
-<p> Delahaye J.-P. and Zenil, H. (2012) Numerical Evaluation of the Complexity of Short Strings: A Glance Into the Innermost Structure of Algorithmic Randomness. 
-  <a href="http://www.sciencedirect.com/science/article/pii/S0096300311012367">Applied Mathematics and Computation</a> 219, pp. 63-77. </br> 
+<p> Delahaye J.-P. and Zenil, H. (2012) Numerical Evaluation of the Complexity of Short Strings: A Glance Into the Innermost Structure of Algorithmic Randomness.
+  <a href="http://www.sciencedirect.com/science/article/pii/S0096300311012367">Applied Mathematics and Computation</a> 219, pp. 63-77. </br>
   <a href="BibTex/numericalBibTex.txt" target="_blank">BibTex entry</a></p>
 
-<p>Soler-Toscano F., Zenil H., Delahaye J.-P. and Gauvrit N. (2014) Calculating Kolmogorov Complexity from the Output Frequency Distributions of Small Turing Machines. <a href="http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0096223">PLoS ONE 9(5): e96223.</a></br> 
+<p>Soler-Toscano F., Zenil H., Delahaye J.-P. and Gauvrit N. (2014) Calculating Kolmogorov Complexity from the Output Frequency Distributions of Small Turing Machines. <a href="http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0096223">PLoS ONE 9(5): e96223.</a></br>
         <a href="BibTex/frequencyBibTex.txt" target="_blank">BibTex entry</a>
 
-<p>Zenil H., Soler-Toscano F., Dingle K. and Louis A. (2014) Correlation of Automorphism Group Size and Topological Properties with Program-size Complexity Evaluations of Graphs and Complex Networks, <a href="http://www.sciencedirect.com/science/article/pii/S0378437114001691">Physica A: Statistical Mechanics and its Applications</a>, vol. 404, pp. 341–358, 2014.</br> 
+<p>Zenil H., Soler-Toscano F., Dingle K. and Louis A. (2014) Correlation of Automorphism Group Size and Topological Properties with Program-size Complexity Evaluations of Graphs and Complex Networks, <a href="http://www.sciencedirect.com/science/article/pii/S0378437114001691">Physica A: Statistical Mechanics and its Applications</a>, vol. 404, pp. 341–358, 2014.</br>
 <a href="BibTex/graphBibTex.txt" target="_blank">BibTex entry</a></p>
-<p>Zenil H., Soler-Toscano F., Kiani N.A.,  Hernández-Orozco S.,  Rueda-Toicen A. (2016) A Decomposition Method for Global Evaluation of Shannon Entropy and Local Estimations of Algorithmic Complexity, <a href="https://arxiv.org/abs/1609.00110">arXiv:1609.00110</a></a></br> 
+<p>Zenil H., Soler-Toscano F., Kiani N.A.,  Hernández-Orozco S.,  Rueda-Toicen A. (2016) A Decomposition Method for Global Evaluation of Shannon Entropy and Local Estimations of Algorithmic Complexity, <a href="https://arxiv.org/abs/1609.00110">arXiv:1609.00110</a></a></br>
         <a href="BibTex/bdmBibTex.txt" target="_blank">BibTex entry</a></p>
 <p>See the <a href="http://algorithmicnature.wordpress.com/publications/">Publications</a> section for even more details and  applications  to other areas and connections to other measures.</p><p>&nbsp;</p></div>
 <table width="797" border="0" align="center">

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+
+function insertTodayText () {
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1; //January is 0!
+  var yyyy = today.getFullYear();
+
+   if(dd<10) {
+     dd='0'+dd
+   } 
+
+   if(mm<10) {
+    mm='0'+mm
+   } 
+
+   today = dd+'-'+mm+'-'+yyyy;
+
+   document.getElementById('todayText').innerHTML = today;
+
+   document.getElementById('yearText').innerHTML = yyyy;
+}
+
+</script>
+
+<style>
+
+.citeStyle{
+   font-family: Courier;
+   line-height: 1.2em;
+}
+
+.indentCite{
+   padding-left: 2em;
+   text-indent: -2em;
+}
+
+</style>
+
+</head>
+<body class="citeStyle" onload="insertTodayText();">
+
+<p>
+<div class="indentCite">
+@misc{oacc,<br>
+title = {The Online Algorithmic Complexity Calculator, v1.0},<br>
+ author = {Hector Zenil and Fernando Soler-Toscano and Antonio Rueda-Toicen and Nicolas Gauvrit and Henrik Singmann and Jean-Paul Delahaye and Narsis A. Kiani and Santiago Hern\'{a}ndez-Orozco and Joost J. Joosten},<br>
+ year = {<span id="yearText"></span>},<br>
+ url = {www.complexitycalculator.com},<br>
+ note ={[Online, accessed <span id="todayText"></span>]}</div>
+}
+</p>
+
+
+</body>
+</html>
