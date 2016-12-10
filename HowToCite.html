@@ -28,11 +28,44 @@ a:hover {
 a:active {
 	text-decoration: none;
 }
+
+.center-justified {
+  text-align: justify;
+  margin: 0 auto;
+  width: 55em;
+}
+
 </style>
+
+<script type="text/javascript">
+
+function insertTodayText () {
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1; //January is 0!
+  var yyyy = today.getFullYear();
+
+   if(dd<10) {
+     dd='0'+dd
+   } 
+
+   if(mm<10) {
+    mm='0'+mm
+   } 
+
+   today = dd+'-'+mm+'-'+yyyy;
+
+   document.getElementById('todayText').innerHTML = today;
+
+   document.getElementById('yearText').innerHTML = yyyy;
+}
+
+</script>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
-  <body background="./images/TuringField.png" class="default">
+  <body onload="insertTodayText();" background="./images/TuringField.png" class="default" >
 <center>
    <a href="index.html">Main Page</a> | <a href="HowItWorks.html">How It Works</a> | <a href="HowToCite.html">How To Cite</a> | <a href="team.html">Team</a> | <a href="https://github.com/andandandand/OACC">GitHub Repo</a> | <a href="DownloadDataAndTools.html">Download Data and Tools</a> | <a href="http://algorithmicnature.wordpress.com/publications/">Publications</a> 
   <h1><a href="index.html">The Online Algorithmic Complexity Calculator</a></h1> 
@@ -40,22 +73,30 @@ a:active {
 </center>
 
 <center>
+
+
+<p><strong>If you use results from the OACC in a publication, please cite as: </strong></p>
+
+<div class="center-justified">
+<p> Zenil H., Soler-Toscano F., Rueda-Toicen A., Gauvrit N., Singmann H., Delahaye J.-P., Kiani N.A., Hernández-Orozco S., Joost J.J. (<span id="yearText"></span>) The Online Algorithmic Complexity Calculator v1.0, <a href="http://complexitycalculator.com/">www.complexitycalculator.com</a>, [Accessed on <span id="todayText"></span>]. &nbsp;<a href="BibTex/oaccBibtexDynamic.html">&nbsp;BibTex entry</a></p>
+</div>
+
 <table width="940" height="79" border="1">
   <tr>
     <td width="220" align="center" valign="top"><h4> <strong>
           <em>If you looked up for</em></strong></h4>
       
     </td>
-    <td width="704"><h4 align="center" valign="top"><strong><em>You must cite the following papers</em></strong></h4></td>
+    <td width="704"><h4 align="center" valign="top"><strong><em>You must also cite the following papers</em></strong></h4></td>
   </tr>
   <tr>
-    <td align="center" valign="top"><p>&nbsp;</p>
+    <td align="center" valign="baseline"><p>&nbsp;</p>
       <p>Strings shorter than 12 bits, then you used <strong>CTM</strong></p></td>
     <td>
       <p> Delahaye J.-P. and Zenil, H. (2012) Numerical Evaluation of the Complexity of Short Strings: A Glance Into the Innermost Structure of Algorithmic Randomness<br>
         <a href="http://www.sciencedirect.com/science/article/pii/S0096300311012367">Applied Mathematics and Computation</a> 219, pp. 63-77. &nbsp; 
         <a href="BibTex/numericalBibTex.txt" target="_blank">BibTex entry</a></p>
-      <p><strong>AND</strong></p>
+      <p><strong><i>AND</i></strong></p>
       <p>Soler-Toscano F., Zenil H., Delahaye J.-P. and Gauvrit N. (2014) Calculating Kolmogorov Complexity from the Output Frequency Distributions of Small Turing Machines. <a href="http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0096223">PLoS ONE 9(5): e96223.</a>&nbsp; 
       <a href="BibTex/frequencyBibTex.txt" target="_blank">BibTex entry</a></p>
       </p>
@@ -63,24 +104,24 @@ a:active {
   </td>
   </tr>
   <tr>
-    <td align="center" valign="top"><p>&nbsp;</p>
+    <td align="center" valign="baseline"><p>&nbsp;</p>
       <p>Strings longer than 12 bits, then you used both <strong>CTM</strong> and <strong>BDM</strong></p></td>
     <td><p>Soler-Toscano F., Zenil H., Delahaye J.-P. and Gauvrit N. (2014) Calculating Kolmogorov Complexity from the Output Frequency Distributions of Small Turing Machines. <a href="http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0096223">PLoS ONE 9(5): e96223.</a>&nbsp; 
       <a href="BibTex/frequencyBibTex.txt" target="_blank">BibTex entry</a></p>
-      <p><strong>AND</strong></p>
+      <p><b><i>AND</i></b></p>
       <p>Zenil H., Soler-Toscano F., Kiani N.A.,  Hernández-Orozco S.,  Rueda-Toicen A. (2016) A Decomposition Method for Global Evaluation of Shannon Entropy and Local Estimations of Algorithmic Complexity, <a href="https://arxiv.org/abs/1609.00110">arXiv:1609.00110</a></a>&nbsp; 
         <a href="BibTex/bdmBibTex.txt" target="_blank">BibTex entry</a></p>
     </td>
   </tr>
   <tr>
-    <td align="center" valign="top"><p>&nbsp;</p>
+    <td align="center" valign="baseline"><p>&nbsp;</p>
       <p>Matrices larger than 4X4, then you used both <strong>CTM</strong> and <strong>graph BDM</strong></p></td>
     <td><p>Soler-Toscano F., Zenil H., Delahaye J.-P. and Gauvrit N. (2014) Calculating Kolmogorov Complexity from the Output Frequency Distributions of Small Turing Machines. <a href="http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0096223">PLoS ONE 9(5): e96223.</a>&nbsp; <a href="BibTex/frequencyBibTex.txt" target="_blank">BibTex entry</a></p>
-      <p><strong>AND</strong></p>
+      <p><strong><i>AND</i></strong></p>
       <p>Zenil H., Soler-Toscano F., Dingle K. and Louis A. (2014) Correlation of Automorphism Group Size and Topological Properties with Program-size Complexity Evaluations of Graphs and Complex Networks, <a href="http://www.sciencedirect.com/science/article/pii/S0378437114001691">Physica A: Statistical Mechanics and its Applications</a>, vol. 404, pp. 341–358, 2014.&nbsp; 
       <a href="BibTex/graphBibTex.txt" target="_blank">BibTex entry</a>
       </p>
-      <p><strong>AND</strong></p>
+      <p><strong><i>AND</i></strong></p>
       <p>Zenil H., Soler-Toscano F., Kiani N.A.,  Hernández-Orozco S.,  Rueda-Toicen A. (2016) A Decomposition Method for Global Evaluation of Shannon Entropy and Local Estimations of Algorithmic Complexity, <a href="https://arxiv.org/abs/1609.00110">arXiv:1609.00110</a></a>&nbsp; 
         <a href="BibTex/bdmBibTex.txt" target="_blank">BibTex entry</a></p></td>
   </tr>
