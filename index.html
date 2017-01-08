@@ -36,19 +36,23 @@ MM_reloadPage(true);
 </head>
 <body background="./images/TuringField.png" class="default">
 <center>
-<a href="index.html">Main Page</a> | <a href="HowItWorks.html">How It Works</a> | <a href="HowToCite.html">How To Cite</a> | <a href="team.html">Team</a> | <a href="https://github.com/andandandand/OACC">GitHub Repo</a> | <a href="DownloadDataAndTools.html">Download Data and Tools</a> | <a href="http://algorithmicnature.wordpress.com/publications/">Publications</a> 
-  <h1><a href="index.html">The Online Algorithmic Complexity Calculator</a></h1> 
-<p></p>
+<a href="index.html">Main Page</a> | <a href="HowItWorks.html">How It Works</a> | <a href="HowToCite.html">How To Cite</a> | <a href="team.html">Team</a> | <a href="https://github.com/algorithmicnaturelab/OACC">GitHub Repo</a> | <a href="DownloadDataAndTools.html">Download Data and Tools</a> | <a href="http://algorithmicnature.wordpress.com/publications/">Publications</a> 
+  <h1><a href="index.html">The Online Algorithmic Complexity Calculator</a></h1>
+  <h4><strong>v2.0</strong></h4>
+  <p></p>
 &nbsp;
 </br>
 
 <div class="holds-the-iframe">
 <iframe seamless src="http://162.243.187.215:3838/OACC/" 
-    style="border: none; width: 55vw; height: 106vw"></iframe>
+    style="border: none; width: 55vw; height: 108vw"></iframe>
 </div>
 
-<p align="justify">&nbsp;</p>
+<p>&nbsp;</p>
 
+<p class="center-justified">This calculator represents a new approach and provides <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0096223">improved estimations of Kolmogorov-Chaitin complexity</a> ($K$) of <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0096223">strings</a> and <a href="https://peerj.com/articles/cs-23/">2-dimensional arrays</a>.  It uses a method (<a href="https://arxiv.org/abs/1609.00110">$BDM$</a>) based upon <a href="http://www.scholarpedia.org/article/Algorithmic_probability">Algorithmic Probability</a>, which is <a href="http://content.iospress.com/articles/computability/com019">compatible</a> with (but beyond the scope of) lossless compression algorithms <a href="https://arxiv.org/abs/1608.05972">whose implementations are based on calculations of Shannon entropy ($S$)</a> (e.g. <a href="https://en.wikipedia.org/wiki/LZ77_and_LZ78">Lempel-Ziv</a>, <a href="https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Welch">Lempel-Ziv-Welch</a>, <a href="https://en.wikipedia.org/wiki/DEFLATE">DEFLATE</a>, etc).  Such algorithms have been widely used to estimate $K$. In contrast to compression methods, <a href="https://arxiv.org/abs/1609.00110">$BDM$</a> not only considers statistical regularities but is also sensitive to segments of algorithmic  nature, such as in a sequence like $12345...$ which $S$ and lossless compression algorithms would characterize as having maximum randomness and the highest degree of incompressibility despite its recursive nature. For $BDM$, the same sequence would have a low algorithmic complexity, as there are many short computer programs that generate it.</p>
+
+<p>&nbsp;</p>
 <h5 align="center"></h5>
 
 
@@ -68,7 +72,7 @@ MM_reloadPage(true);
 <p>&nbsp;</p>
 
 <p align="center"><strong>with the support of</strong></p>
-<p align="center"><img src="./images/logostrans.png" width="702" height="172"  alt=""/></p>
+<p align="center"><img src="images/logostrans.png" width="604" height="172"  alt=""/></p>
 
 
 <p align="center"></p>
