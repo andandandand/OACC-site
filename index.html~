@@ -26,7 +26,7 @@ MM_reloadPage(true);
 <a href="index.html">Main Page</a> | <a href="HowItWorks.html">How It Works</a> | <a href="HowToCite.html">How To Cite</a> | <a href="team.html">Team</a> | <a href="https://github.com/algorithmicnaturelab/OACC">GitHub Repo</a> | <a href="DownloadDataAndTools.html"> Download Data and Tools</a> | <a href="http://algorithmicnature.wordpress.com/publications/">Publications</a>
 <h1><a href="index.html">The Online Algorithmic Complexity Calculator</a></h1>
   <h4><strong>v2.5</strong></h4>
-  <p>To calculate your 'personal cognitive randomness' ability (<a href="http://www.hectorzenil.net/media.html" target="new">as shown in our widely covered article</a>) read <a href="HowItWorks.html#personalrandomness">this</a></p>
+  <p>To calculate your 'personal cognitive randomness' ability (<a href="http://www.hectorzenil.net/media.html" target="new">as shown in our widely covered article</a>) read <a href="HowItWorks.html#personalrandomness">this</a>.</p>
   <p></p>
 &nbsp;
 </br>
@@ -68,7 +68,7 @@ MM_reloadPage(true);
 <hr />
 <br />
 <p align="center"></p>
-<p>As seen on the Newsletters of the:</p>
+<p>As seen on the newsletters of the:</p>
 <p>&nbsp;</p>
 <p><a href="https://www.lms.ac.uk/"><img border="0" height="96" src="./images/LMSlogo.png" width="291" /></a>   <img src="space.png" width="32" height="19"  alt=""/><img src="space.png" width="32" height="19"  alt=""/><img src="space.png" width="32" height="19"  alt=""/><img src="space.png" width="32" height="19"  alt=""/><img src="IOP.jpg" width="146" height="94"  alt=""/></p>
 <p>&nbsp;</p>

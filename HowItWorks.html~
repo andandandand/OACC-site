@@ -53,15 +53,6 @@ a:active {
   width: 55em;
 }
 
-table {
-    border-collapse: collapse;
-    width: 90%;
-}
-
-table, th, td {
-    border: 1px solid black;
-    text-align: center;
-}
 
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -77,30 +68,30 @@ table, th, td {
 
   <div class="center-justified">
   <h2>Overview</h2>
-  <p>This introductory video provides a brief overview for non-experts in the area explaining how both the Coding Theorem Method ($\textit{CTM}$) and the Block Decomposition Method ($\textit{BDM}$) approximate universal measures of algorithmic complexity.</p>
+  <p>This introductory video provides a brief overview for non-experts in the area explaining how both the Coding Theorem Method ($CTM$) and the Block Decomposition Method ($BDM$) approximate universal measures of algorithmic complexity.</p>
 
 <center>
   <iframe seamless src="https://www.youtube.com/embed/BEaXyDS_1Cw" style="border: none; width: 50vw; height: 30vw" allowfullscreen></iframe>
 
   <div class="center-justified">
-      <p>The <strong><a href="http://www.complexitycalculator.com" target="_blank">Online Algorithmic Complexity Calculator (OACC)</strong></a> is a tool developed by the <a href="http://algorithmicnature.org/" target="_blank">Algorithmic Nature Group</a> to provide reliable estimations to non-computable functions. This is achieved through various numerical methods based upon the mathematical theory of algorithmic probability and algorithmic randomness. The estimations have a wide range of applications in a range of disciplines from molecular biology, to cognitive science, time series research (e.g. finance), and graph theory (for a list of examples, see <a href="http://algorithmicnature.wordpress.com/publications/">Publications</a>).</p>
+      <p align="justify">The&nbsp;<strong>Online Algorithmic Complexity Calculator (OACC)</strong>&nbsp;is an online&nbsp;tool developed&nbsp;by the&nbsp;<a href="http://algorithmicnature.org/" target="_blank">Algorithmic Nature Group</a>&nbsp;to provide reliable estimations&nbsp;to non-computable functions. This is achieved&nbsp;through various numerical methods based upon the mathematical theory of&nbsp;algorithmic probability and&nbsp;algorithmic randomness. The estimations have a wide range of applications&nbsp;in a   range of disciplines&nbsp;from molecular biology, to cognitive science,&nbsp;time series research (e.g. finance), and graph theory (for a list of examples, see <a href="http://algorithmicnature.wordpress.com/publications/">Publications</a>).</p>
 </div>
 
 <div class="center-justified">
 <p>The <strong>OACC</strong> provides numerical approximations (upper bounds) of <a href="http://www.scholarpedia.org/article/Algorithmic_complexity">Algorithmic (Kolmogorov-Chaitin) Complexity</a> (AC) for short strings ($\textit{CTM}$), for strings of any length ($\textit{BDM}_{1D}$), and for binary arrays ($\textit{BDM}_{2D}$), which can represent the adjacency matrices of unweighted graphs. These techniques are not only an alternative to the widespread use of lossless compression algorithms to approximate AC, but true approaches to AC. Lossless compression algorithms (e.g. BZIP2, GZIP, LZ) that are based upon entropy rate are not more related to AC than Shannon Entropy itself, which is unable to compress anything but statistical regularities.</p>
 </div>
 </center>
-    <h2>Advantages of CTM and BDM over Entropy and Lossless Compression</h2>
+    <h2>Advantage of CTM/BDM over Entropy and Lossless Compression</h2>
     
-	<p>The following plots show quantifications of the power of $\textit{CTM}$ and $\textit{BDM}$ to identify objects that look statistically random (high Entropy) but are actually causal in nature, as they are produced by short computer programs and thus recursively produced by a generation mechanism that Entropy and lossless compression algorithms based on entropy rate overlook.</p>
+	<p>The following plots show quantifications of the power of $CTM$ and $BDM$ to identify objects that look statistically random (high Entropy) but are actually causal in nature, as they are produced by short computer programs and thus recursively produced by a generation mechanism that Entropy (and lossless compression algorithms based on Entropy rate) overlooks.</p>
     <center>
 	  <p><img src="./images/causalgaps.png" width="716" height="528" alt=""/></p>
     </center>
 	<div class="center-justified">
-  <p><strong>Plot A: </strong>X axis: Plot of values for a random sample of binary strings of length 100 bits sorted by increasing number of non-zeros. Y axis: Normalized values between 0 and 1 for each of the 3 measures ($\textit{BDM}$, Compress and Entropy) used to approximate algorithmic complexity $K$. The lossless compression curve (here the algorithm used is Compress, but similar behaviour occurs with LZ, LZW, etc) closely follow the  classical Bernoulli distribution for the Entropy of the set of strings. This does not come by surprise because implementations of lossless compression algorithms are actually simply Entropy-rate estimators (up to a fixed window length size). However, the $\textit{BDM}$ distribution approximates the expected theoretical semi-exponential distribution for $K$  assigning lower values to strings that are causally generated but are statistically random-looking to Entropy and compression.</br>
-  <strong>Plot B: </strong>Same test with bitstrings of length 1000 ($\textit{BDM}$ starts approximating Shannon Entropy if $\textit{CTM}$ is not upated).</br>
-  <strong>Plot C: </strong>$\textit{BDM}$ provides a much finer-grained distribution where Shannon Entropy and lossless compression algorithms retrieve only a limited number (about 5) of differentiated 'complexity' values for the all strings of length 12.</br>
-  <strong>Plot D: </strong>Number of strings (of length 12) among all $2^{12}$ bitstrings with maximum Shannon Entropy or near maximum Shannon Entropy but low algorithmic complexity estimated by $\textit{CTM}$/$\textit{BDM}$. Arrows poiting to what we call 'causal gaps' show the power gained by using $\textit{CTM}$/$\textit{BDM}$ against Shannon Entropy and compression at identifying causally generated strings and objects that may not have any statistical patterns but can be recursively/algorithmically produced with a short computer program. More information on $\textit{CTM}$ is available <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0096223">in this paper</a> and on Entropy and $\textit{BDM}$ <a href="https://arxiv.org/abs/1609.00110">in this other one</a>.</p></div>
+  <p><strong>Plot A: </strong>X axis: Plot of values for a random sample of binary strings of length 100 bits sorted by increasing number of non-zeros. Y axis: Normalized values between 0 and 1 for each of the 3 measures ($BDM$, Compress and Entropy) used to approximate algorithmic complexity $K$. The lossless compression curve (here the algorithm used is Compress, but similar behaviour for LZ, LZW, etc) closely follow the  classical Bernoulli distribution for the Entropy of the set of strings. This does not come by surprise because implementations of lossless compression algorithms are actually simply Entropy-rate estimators (up to a fixed window length size). However, the $BDM$ distribution approximates the expected theoretical semi-exponential distribution for $K$  assigning lower values to strings that are causally generated but are statistically random-looking to Entropy and compression.</br>
+  <strong>Plot B: </strong>Same test with bitstrings of length 1000 ($BDM$ starts approximating Shannon Entropy if $CTM$ is not upated).</br>
+  <strong>Plot C: </strong>$BDM$ provides a much finer-grained distribution where Shannon Entropy and lossless compression algorithms retrieve only a limited number (about 5) of differentiated 'complexity' values for the all strings of length 12.</br>
+  <strong>Plot D: </strong>Number of strings (of length 12) among all $2^{12}$ bitstrings with maximum Shannon Entropy or near maximum Shannon Entropy but low algorithmic complexity estimated by $CTM$/$BDM$. Arrows poiting to what we call 'causal gaps' show the power gained by using $CTM$/$BDM$ against Shannon Entropy and compression at identifying causally generated strings and objects that may not have any statistical patterns but can be recursively/algorithmically produced with a short computer program. More information on $CTM$ is available <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0096223">in this paper</a> and on Entropy and $BDM$ <a href="https://arxiv.org/abs/1609.00110">in this other one</a>.</p></div>
 	<p>&nbsp;</p>
   </div>
 </center>
@@ -110,13 +101,13 @@ table, th, td {
 
     <p>If the string that you want to evaluate has length shorter than $13$, you should use the Coding Theorem Method ($\textit{CTM}$) to estimate its algorithmic complexity. Otherwise, you should use the Block Decomposition Method ($\textit{BDM}$), which requires specifying block size and block overlap values if you don't want to use the (optimal) values. The key is to always compare among values with same block size and block overlap values, and not among different ones (as the size and overlap may under- or over-estimate  complexity)</p>
 
-<p>The following is a $\textit{BDM}$ partitioning example for block size $= 6$ and block overlap $= 1$ as an illustration of the meaning of block size and block overlap in the estimation of a complexity of a long string: </p>
+<p>The following is a $BDM$ partitioning example for block size $= 6$ and block overlap $= 1$ as an illustration of the meaning of block size and block overlap in the estimation of a complexity of a long string: </p>
 
 <p align="center"><img src="./images/examplediagram.png" width="432" height="139" alt=""/></p>
 
 
 <p>
-$\textit{BDM}$ is defined by $$\textit{BDM} = \sum_{i}^{n} \textit{CTM}(\textit{block}_i) + \log_{2}(|\textit{block}_i|),$$ where $\textit{CTM}(\textit{block}_i)$ denotes the approximated algorithmic complexity of the pattern in the block of symbols, and $|\textit{block}_i|$ denotes the number of occurrences (multiplicity) of the block.
+$BDM$ is defined by $$\textit{BDM} = \sum_{i}^{n} \textit{CTM}(\textit{block}_i) + \log_{2}(|\textit{block}_i|),$$ where $\textit{CTM}(\textit{block}_i)$ denotes the approximated algorithmic complexity of the pattern in the block of symbols, and $|\textit{block}_i|$ denotes the number of occurrences (multiplicity) of the block.
 </p>
 
     <p>For $\textit{BDM}$, optimal parameters are usually the largest possible block size ($= 12$) with no overlaping ($= 0$). You should always pick the largest available block size, as it provides better approximations to algorithmic complexity. In contrast, the smallest block size ($=1$) approximates Shannon Entropy. You can pick any overlapping value that is shorter than your block size. For example, say your string is $111001010111$ and you use block size $=6$. If the overlapping is $0$, then $\textit{BDM}$ will look up the known $\textit{CTM}$ values of $111001$ and $010111$ and add them up, outputting $29.9515$ bits. Alternatively, you can choose block overlap $=1$, for which the strings whose $\textit{CTM}$ values are added are $111001$, $101011$, and $010111$. This second evaluation will output $32.9672$ bits.</p>
@@ -135,7 +126,7 @@ $\textit{BDM}$ is defined by $$\textit{BDM} = \sum_{i}^{n} \textit{CTM}(\textit{
   $$D(n, m)(s)=\frac{|\{T\in(n, m) : T(p) = s,\ b\in\{0,1,\cdots,m-1\}\}|}{|\{(T,b)\in(n, m)\times \{0,1,\cdots,m-1\} : T(b) \textit{ halts }\}|},$$
   where $T(b)$ represents the output of Turing machine $T$ when running on a blank tape filled with symbol $b$ that produces $s$ upon halting, and $|A|$ represents the cardinality of the set $A$. </p>
 
-<p>For $(n,2)$ with $ n < 5 $, the known Busy Beaver values give the maximum number of steps that a machine can run upon halting. But for $n \geq 5$ or for $(n,m)$ with $m > 2$, no Busy Beaver values are known, and the size of the machine spaces make impossible a complete exploration to calculate $D(n,m)$ for arbitrary $n$ and $m$, but an educated choice of timeouts can be made and samples produced (see the bibliography section below).</div><p>
+<p>For $(n,2)$ with $ n < 5 $, the known Busy Beaver values give the maximum number of steps that a machine can run upon halting. But for $n \geq 5$ or for $(n,m)$ with $m > 2$, no Busy Beaver values are known, and the size of the machine spaces make impossible a complete exploration to calculate $D(n,m)$ for arbitrary $n$ and $m$, but an educated choice of timeouts can be made and samples produced (see  Bibliography section below).</div><p>
 
 <div class="center-justified">
 <h2>Approximating Algorithmic Complexity (K) by CTM and BDM</h2>
@@ -144,96 +135,162 @@ $\textit{BDM}$ is defined by $$\textit{BDM} = \sum_{i}^{n} \textit{CTM}(\textit{
   $$K(s) \simeq -\log_2 \mathfrak{m}(s)$$</p>
 <p>
 The greater value of $n$ we use to calculate $D(n,m)$, the better approximations we make to $K(s)$ for $s$ a string of an alphabet of $m$ symbols. Due to the uncomputability of $D(n,m)$ we work with samples and runtime cutoffs. For the simulation of Turing machines we use a C++ simulator running on a supercomputer of medium size.
-<p>$\textit{BDM}$ extends the power of $\textit{CTM}$ as explained in <a href="https://arxiv.org/abs/1609.00110">this paper</a>.
+<p>$BDM$ extends the power of $CTM$ as explained in <a href="https://arxiv.org/abs/1609.00110">this paper</a>.
 <p>
 </div>
 <div class="center-justified">
   <div class="center-justified">
     <h2>Approximating Bennett's Logical Depth by CTM and BDM</h2>
-    <p>The $\textit{CTM}$ allows us not only to build an empirical distribution of computer program outputs from smallest to larger size but once a string is generated for the first time among all the computer programs of the smallest size, we know which Turing machine is the smallest one producing a string and also the runtime of such a Turing machine. We take the runtime of such a Turing machine as an estimation of Bennett's Logical Depth ($LD$) by $\textit{CTM}$, and also extend the power of $\textit{CTM}$ to estimate $LD$ with a multiplicative variation of the $\textit{BDM}$ formula. Despite the fact that $LD$ is neither lower nor upper semi-computable (and therefore truly non-computable), estimations by $\textit{CTM}$ and $\textit{BDM}$ do produce the  characteristic concave distribution assigning algorithmic random strings lower logical depth, thereby conforming with the theoretical expectation unlike Shannon Entropy and lossless compression:</p>
+    <p>The $CTM$ allows us not only to build an empirical distribution of computer program outputs from smallest to larger size but once a string is generated for the first time among all the computer programs of the smallest size, we know which Turing machine is the smallest one producing a string and also the runtime of such a Turing machine. We take the runtime of such a Turing machine as an estimation of Bennett's Logical Depth ($LD$) by $CTM$, and also extend the power of $CTM$ to estimate $LD$ with a multiplicative variation of the $BDM$ formula. Despite the fact that $LD$ is neither lower nor upper semi-computable (and therefore truly non-computable), estimations by $CTM$ and $BDM$ do produce the  characteristic concave distribution assigning algorithmic random strings lower logical depth, thereby conforming with the theoretical expectation unlike Shannon Entropy and lossless compression:</p>
     <center>
     <p><img src="images/LogicalDepth.png" width="641" height="683"  alt=""/></p>
-    <div class="center-justified"><p>Unlike approximations to algorithmic complexity by lossless compression (top left plot), $LD$-based values using $\textit{CTM}$ and $\textit{BDM}$ conform to theoretical expectation regarding $LD$ behaviour. The behaviour is confirmed among all the $\textit{BDM}$ variations according to different <a href="https://arxiv.org/abs/1609.00110">boundary conditions schemes</a>, and it could not be reproduced either using Shannon Entropy (or Entropy rate) nor using lossless compression algorithms. Further information is available in <a href="https://arxiv.org/abs/1609.00110">this paper</a>.</p></div>
+    <div class="center-justified"><p>Unlike approximations to algorithmic complexity by lossless compression (top left plot), $LD$-based values using $CTM$ and $BDM$ conform to theoretical expectation regarding $LD$ behaviour. The behaviour is confirmed among all the $BDM$ variations according to different <a href="https://arxiv.org/abs/1609.00110">boundary conditions schemes</a>, and it could not be reproduced either using Shannon Entropy (or Entropy rate) nor using lossless compression algorithms. Further information is available in <a href="https://arxiv.org/abs/1609.00110">this paper</a>.</p></div>
     <a name="personalrandomness"></a>
     </center>
-    <h2>Calculating your ability to behave randomly by producing a random-looking sequence
+    <h2>Calculating your ability to behave random by producing a random-looking sequence
       and grid</h2>
-    <p>In an <a href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005408" target="new">article</a> published by PLoS Computational Biology we have shown that the ability to produce algorithmic randomness peaks at age 25. The article was <a href="http://www.hectorzenil.net/media.html" target="new">widely covered by the world media</a>.  You can test your own personal ability using this calculator. The results in the paper are given in what are called '$\textit{z-scores}$'. To obtain your result and be able to compare it to those in the paper, you only need  to apply the following  formula to the output that you obtain from this calculator: your <strong>$\textit{z-score} = (K-m)/s$</strong>, where $K$ is the output that you will obtain from this calculator for a sequence (in the tab <i>'For short strings'</i> choose $\textit{CTM}$ value) or for a grid (in the tab <i>'For binary arrays'</i> choose $\textit{BDM}$ value). The values for $m$ and $s$, and the parameters to choose in the calculator appear in the following table:
-  
-<table border="1" align="center" text-align="center" summary="Means and standard deviations">
-
-  <caption>
-        Your $\textit{z-score}$ calculation
-  </caption>
-
-<tr>
-	<th>item</th>
-        <th>task</th>
-	<th>$m$</th>
-        <th>$s$</th>
-        <th>alphabet</th>
-        <th>overlap</th>
-        <th>length</th>
-</tr>
-
-<tr>
-<td><strong>1</strong></td>
-<td><strong>Toss</strong></td>
-<td>32.5</td>
-<td>1.56</td>
-<td>2</td>
-<td>0</td> 
-<td>12</td> 
-</tr>
-
-<tr>
-<td><strong>2</strong></td>
-<td><strong>Guess</strong></td>
-<td>34.7</td>
-<td>1.07</td>
-<td>5</td>
-<td>0</td> 
-<td>10</td>
-</tr>
-
-<tr>
-<td><strong>3</strong></td>
-<td><strong>Spot</strong></td>
-<td>41.41</td>
-<td>0.93</td>
-<td>9</td>
-<td>0</td> 
-<td>10</td>
-</tr>
-
-<tr>
-<td><strong>4</strong></td>
-<td><strong>Roll</strong></td>
-<td>36.62</td>
-<td>1.04</td>
-<td>6</td>
-<td>0</td> 
-<td>10</td>
-</tr>
-
-<tr>
-<td><strong>5</strong></td>
-<td><strong>Grid</strong></td>
-<td>17.01</td>
-<td>1.08</td>
-<td>2D</td>
-<td>0</td> 
-<td>3 x 3</td>
-</tr>
-
-</table>
-
+    <p>In an <a href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005408" target="new">article</a> published by PLoS Computational Biology we have shown that the ability to produce algorithmic randomness peaks at age 25. The article was <a href="http://www.hectorzenil.net/media.html" target="new">widely covered by the world media</a>.  You can test your own personal ability using this calculator. The results in the paper are given in what are called 'z-scores', to obtain yours and be able to compare your results to those in the paper, you  only need  to apply the following  formula to the result you obtain from this calculator: your <strong>z-score = $(K-m)/s$</strong>, where $K$ is the result you will obtain from this calculator for a sequence (tab 'For short strings' use $CTM$ value) or for a grid (tab 'For binary arrays' $BDM$ value). The values for $m$ and $s$, and the parameters to choose in the calculator are in the following table:
+    <table border="1" align="center" summary="Means and standard deviations">
+      <caption>
+        Your z-score calculation
+      </caption>
+      <tr>
+        <th scope="col">item</th>
+        <th scope="col"><blockquote>task</blockquote></th>
+        <th scope="col"><blockquote>
+          <p>m</p>
+        </blockquote></th>
+        <th scope="col"><blockquote>
+          <p>s</p>
+        </blockquote></th>
+        <th scope="col"><blockquote>
+          <p>alphabet</p>
+        </blockquote></th>
+        <th scope="col">overlap</th>
+        <th scope="col"><blockquote>
+          <p>length</p>
+        </blockquote></th>
+      </tr>
+      <tr>
+        <th scope="row">1</th>
+        <th scope="row"><blockquote>
+          <p>Toss</p>
+        </blockquote></th>
+        <td><blockquote>
+          <p>32.5</p>
+        </blockquote></td>
+        <td><blockquote>
+          <p>1.56</p>
+        </blockquote></td>
+        <td><blockquote>
+          <blockquote>
+            <p>2</p>
+          </blockquote>
+        </blockquote></td>
+        <td><blockquote>
+          <p>0</p>
+        </blockquote></td>
+        <td><blockquote>
+          <p> 12</p>
+        </blockquote></td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <p>Guess</p>
+        <td><blockquote>
+          <p>34.7</p>
+        </blockquote></td>
+        <td><blockquote>
+          <p>1.07</p>
+        </blockquote></td>
+        <td><blockquote>
+          <blockquote>
+            <p>5</p>
+          </blockquote>
+        </blockquote></td>
+        <td><blockquote>
+          <p>0</p>
+        </blockquote></td>
+        <td><blockquote>
+          <p>10</p>
+        </blockquote></td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <th scope="row">Spot</th>
+        <td><blockquote>
+          <p>41.41</p>
+        </blockquote></td>
+        <td><blockquote>
+          <p>0.93</p>
+        </blockquote></td>
+        <td><blockquote>
+          <blockquote>
+            <p>9</p>
+          </blockquote>
+        </blockquote></td>
+        <td><blockquote>
+          <p>0</p>
+        </blockquote></td>
+        <td><blockquote>
+          <p>10</p>
+        </blockquote></td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <th scope="row">Roll</th>
+        <td><blockquote>
+          <p>36.62</p>
+        </blockquote></td>
+        <td><blockquote>
+          <p>1.04</p>
+        </blockquote></td>
+        <td><blockquote>
+          <blockquote>
+            <p>6</p>
+          </blockquote>
+        </blockquote></td>
+        <td><blockquote>
+          <p>0</p>
+        </blockquote></td>
+        <td><blockquote>
+          <p>10</p>
+        </blockquote></td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <th scope="row"><blockquote>
+          <p>Grid</p>
+        </blockquote></th>
+        <td><blockquote>
+          <p>17.01</p>
+        </blockquote></td>
+        <td><blockquote>
+          <p>1.08</p>
+        </blockquote></td>
+        <td><blockquote>
+          <blockquote>
+            <p>2D</p>
+          </blockquote>
+        </blockquote></td>
+        <td><blockquote>
+          <p>0</p>
+        </blockquote></td>
+        <td><blockquote>
+          <p>3x3</p>
+        </blockquote></td>
+      </tr>
+    </table>
+    <blockquote>
+      <blockquote>&nbsp;</blockquote>
+    </blockquote>
+  </div>
   <h2>Version history and future of the OACC</h2>
-  <p class="center-justified">We keep expanding the calculator to wider horizons of methodological and numerical capabilities:</p>
+  <p>We keep developing the calculator towards wider horizons of methodological and numerical capabilities:</p>
   <ul>
     <li><strong>Version 1</strong>: Estimations of $K$ for short binary strings</li>
-    <li><strong>Version 2</strong>: Expanded $\textit{CTM}$ and $\textit{BDM}$ capabilities for non-binary strings and  arrays</li>
-    <li><strong>Version 2.5</strong> (<em><strong>current version</strong></em>): Estimations of Bennett's logical depth based on $\textit{CTM}$</li>
+    <li><strong>Version 2</strong>:  $CTM$ and $BDM$ expanded capabilities for non-binary strings and  arrays</li>
+    <li><strong>Version 2.5</strong> (<em><strong>current version</strong></em>): Estimations of (Bennett's) logical depth based on $CTM$</li>
     <li><strong>Version 3</strong>: Algorithmic-information dynamics of strings, arrays and networks</li>
     <li><strong>Version 4</strong>: Algorithmic complexity of models, algorithmic feature selection, algorithmic dimensionality reduction and model generator.</li>
   </ul>
